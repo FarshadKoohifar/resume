@@ -1,0 +1,135 @@
+\documentclass[]{resume-openfont}
+
+\pagestyle{fancy}
+\resetHeaderAndFooter
+
+%--------------------------------------------------------------
+% Convenience command - make it easy to fill template
+
+% Create job position command. Parameters: company, position, location, when
+\newcommand{\resumeHeading}[4]{\runsubsection{\uppercase{#1}}\descript{ | #2}\hfill\location{#3 | #4}\fakeNewLine}
+
+% Create education heading. Parameters: Name, degree, location, when
+\newcommand{\educationHeading}[4]{\runsubsection{#1}\hspace*{\fill}  \location{#3 | #4}\\
+\descript{#2}\fakeNewLine}
+
+% Create project heading. Parameters: Name, link, Tech stack
+\newcommand{\projectHeading}[3]{\Project{#1}{#2}
+\descript{#3}\\}
+
+\newcommand{\projectHeadingWithDate}[4]{\Project{#1}{#2}
+\descript{#3 | #4}\\}
+
+% Parameters: courses
+\newcommand{\courseWork}[1]{\textbf{Coursework:} #1}
+
+% Parameters: courses
+\newcommand{\teacherAssistant}[1]{\textbf{Teacher Assistant (TA):} #1}
+\newcommand{\researchAssistant}[1]{\textbf{Research Assistant (RA):} #1}
+ 
+%--------------------------------------------------------------
+\begin{document}
+
+%--------------------------------------------------------------
+%     Profile
+%--------------------------------------------------------------
+\newcommand{\yourName}{Farshad Koohifar}
+% How you want it to show up on the resume
+\newcommand{\yourWebsite}{www.koohifar.com}
+% vs how you want it to show up. If it's you can just replace "\yourWebsiteLink" with "yourWebsite"
+\newcommand{\yourWebsiteLink}{https://koohifar.com}
+\newcommand{\yourEmail}{farshad.koohifar@gmail.com}
+\newcommand{\yourPhone}{1-786-315-7145}
+\newcommand{\githubUserName}{FarshadKoohifar}
+\newcommand{\linkedInUserName}{farshad-koohifar-35667863}
+
+% An alternate profile section 
+% \alignProfileTable
+% \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+%     \ralewayBold{\href{\yourWebsiteLink}{\Large \yourName}} & 
+%     Email : \href{mailto:\yourEmail}{\yourEmail}
+%     \\
+%     \href{https://github.com/\githubUserName}{GitHub://\githubUserName} & 
+%     Mobile : \yourPhone
+%     \\
+%     \href{https://www.linkedin.com/in/\linkedInUserName}{LinkedIn://\linkedInUserName} & Website : \href{\yourWebsiteLink}{\yourWebsite}
+%     \\
+% \end{tabular*}
+
+\begin{center}
+    \Large \scshape \latoRegular{\yourName} \\ \vspace{1pt}
+    \small \href{mailto:\yourEmail}{\underline{\yourEmail}}  $|$  \yourPhone $|$ 
+    \href{https://www.linkedin.com/in/\linkedInUserName}{\underline{linkedIn/\linkedInUserName}} $|$
+    \href{https://github.com/\githubUserName}{\underline{github/\githubUserName}} 
+    % $|$ \href{\yourWebsiteLink}{\underline{\yourWebsite}}
+\end{center}
+
+%--------------------------------------------------------------
+%     Experience
+%--------------------------------------------------------------
+\section{Work Experience}
+
+\resumeHeading{Modern Hire}{Machine Learning Engineer II}{Austin, Tx}{Feb 2021 – present}
+\begin{bullets}
+\justifying
+    \item Tech lead for \textbf{Continuous Monitoring} of our production models and transcription pipeline through \textbf{AWS SES} and \textbf{Snowflake} datamarts. This system continuously monitors for abnormal population drift and abnormal empirical prediction histograms through \textbf{Stochastic Time Series} modeling of the expected observations.
+    \item Tech lead for \textbf{Occupational AI}, which clusters similar occupations based on job descriptions using \textbf{BERTopic}, resulting in improved default configuration of new job openings. This project is still in progress and is expected to significantly reduce the required resources for onboarding new clients.
+    \item Designed and implemented multilingual heteroskedastic \textbf{Transformer} based \textbf{NLP} models using \textbf{Torch} and \textbf{HuggingFace} to predict 11 behavioural metrics. Our published results outperformed our competition.
+    \item Designed and implemented a \textbf{Tabular Ensemble Learning} model that predicts the job performance and turn over, using pre-hire assessment data. This is used to provide our clients with an estimate of monetary value of our services.
+
+\end{bullets}
+
+\resumeHeading{Modern Hire}{Machine Learning Engineer}{Austin, Tx}{Oct 2019 – Feb 2021}
+\begin{bullets}
+\justifying
+    \item Designed and implemented a \textbf{Scalable}, \textbf{Distributed} and \textbf{Fault Tolerant} hyperparameter tuning and model training infrastructure with real time worker status monitoring and report generation using \textbf{Python}:
+    \begin{bullets}
+        \item Asynchronous scaling through \textbf{AWS EC2}, \textbf{AWS S3}, and \textbf{AWS ECR}.
+        \item Saving 70\% of the time spent on infrastructure provisioning from 20 minutes to 6 minutes spent per job.
+    \end{bullets}
+    \item Designed and implemented \textbf{LSTM} based \textbf{NLP} models and compared their performance with \textbf{Transformer} based models. As a result, the product technology road map switched to \textbf{RoBERTa} and later to \textbf{XlmRoBERTa}.
+    \item Designed and implemented a mask based \textbf{Model Explainability} tool that enables us to generate heat maps for \textbf{Transformer} based models and most important word clusters, the most requested features from our clients.
+    \item Designed and implemented a \textbf{CNN} image processing model to predict applicants' race and gender based on their video interviews, ensuring that our models were unbiased and remain unbiased against protected classes.
+\end{bullets}
+
+\resumeHeading{Modern Hire}{Machine Learning Intern}{Raleigh, Nc}{Jul 2019 – Oct 2019}
+\begin{bullets}
+\justifying
+    \item Designed and implemented audio processing deep learning models to predict verbal expression of our applicants based on \textbf{FastAI}. The models match human experts correlation with expert consensus on verbal expression.
+    \item Designed and implemented 7 \textbf{audio feature extraction} methods including: Pitch, Pace, Intensity, and Hesitation. We showed significant correlation between pace and on the job performance for bank tellers.
+\end{bullets}
+
+\resumeHeading{DARPA}{Spectrum Collaboration Grand Challenge}{Raleigh, Nc}{Oct 2017 – Jul 2019}
+\begin{bullets}
+\justifying
+    \item I led team Wolfpack, North Carolina State University's team of three, that became \textbf{Phase I and Phase II finalist} for DARPA SC2 Grand Challenge, leading to a \textbf{\$150,000 award and recognition from National Science Foundation}.
+    \item We designed a distributed and fault tolerant collaborative communication network with high computation and spectrum efficiency using \textbf{C++} and \textbf{Python}.
+\end{bullets}
+\sectionsep
+
+%--------------------------------------------------------------
+%     Education
+%--------------------------------------------------------------
+\section{Education}
+% Put school first and degree second if your school is reputable
+\educationHeading{Ph.D. Electrical and Computer Engineering}{North Carolina State University}{Raleigh, NC}{Aug 2021}\\
+\researchAssistant{Cognitive Networks}\\
+\educationHeading{M.S. Electrical and Computer Engineering}{Sharif University of Technology}{Tehran, Iran}{Aug 2013}\\
+\teacherAssistant{Intelligent Systems Lab}\\
+\educationHeading{B.S. Electrical and Computer Engineering}{Iran University of Science and Technology}{Tehran, Iran}{Sep 2011}\\
+\teacherAssistant{Advanced Networking}\\
+% \courseWork{Data Structures and Algorithms; Operating Systems;  Computer Security; Software Testing; Advanced Networking; Big Data Analytics}
+\sectionsep
+
+%--------------------------------------------------------------
+%     Skills
+%--------------------------------------------------------------
+\section{Skills}
+\begin{skillList}
+    \singleItem{Languages:}{Python, C++, SQL, Matlab, \LaTeX}\\
+    \singleItem{Machine Learning:}{Transformers, CNN, LSTM, SVM, KNN, Naive Bayes}\\
+    \singleItem{Packages:}{Pandas, Torch, Numpy, SciKitLearn, Matplotlib, Seaborn}\\
+    \singleItem{Technology:}{AWS, Docker, Git, Flask, Fastai}
+\end{skillList}
+
+\end{document}
